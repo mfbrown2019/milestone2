@@ -1,10 +1,11 @@
 import React from "react";
 import App from "./App";
-import App from './App';
 import Detail from './detail';
 import List from './list';
 import CreateNew from './createNew';
 import reportWebVitals from './reportWebVitals';
+
+import { Routes, Route } from "react-router-dom";
 
 
 function Router() {
