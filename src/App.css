@@ -1,38 +1,137 @@
-.App {
+* {
+  padding: 0px;
+  margin: 5px;
+}
+
+.top {
+  text-align: center;
+  background: -webkit-linear-gradient(-180deg, black, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paw {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: shake;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes shake {
+  0% {transform: rotate(-30deg); margin-left: 10%;}
+  15% {transform: rotate(30deg);}
+  30% {transform: rotate(-30deg);}
+  50% {transform: rotate(30deg); margin-left: 80%;}
+  65% {transform: rotate(-30deg);}
+  80% {transform: rotate(30deg);}
+  100% {transform: rotate(-30deg); margin-left: 10%;}
+}
+
+body {
+  background-color: #6B0504;
+}
+
+header {
+  background-color: #E6AF2E;
+  padding: 2rem 0rem .5rem 0rem;
+  border-radius: 10px;
+}
+
+header > nav {
+  display: flex;
+  width: 100%;
+}
+
+header > div {
+  padding-left: 1rem;
+}
+
+.usernav {
+  border-bottom: 3px solid black;
+  justify-content: right;
+  width: 99%;
+  padding-bottom: .5rem;
+}
+
+.userul {
+  width: fit-content;
+  display: flex;
+  justify-content: right;
+  background-color: #6B0504;
+}
+
+a {
+  color: #FBFFFE;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E6AF2E;
+  font-weight: bold;
+}
+
+
+li {
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0rem 1rem;
+}
+
+.gennav {
+  width: fit-content;
+  display: flex;
+  margin-top: .5rem;
+  justify-content: right;
+  background-color: #6B0504;
+}
+
+article {
+  background-color: #e1b95c;
+  color: black;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.intro {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainCards {
+  height: fit-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainCards > div {
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainCards > div:hover {
+  scale: 1.01;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+footer {
+  color: #FBFFFE;
+  text-align: center;
 }
