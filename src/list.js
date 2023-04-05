@@ -11,63 +11,265 @@ import './detail.css';
 function List() {
   return (
     <div className="List">
+        
         <body>
-            <header class="banner">
-                <h1>Welcome to Our Christmas Store</h1>
-                <p>This page should be tried in safari, chrome or Mozila.</p>
-                <img class="paw" src={panther_paw} alt="Paw" width="300px" height="400px"/>
+            <header className="banner">
+                <div className="top">
+                    <h1>Welcome to our To-Do List App</h1>
+                </div>
+                <img className="paw" src={panther_paw} alt="Paw"/>
+                <nav className="loginname">
+                    <ul>
+                        <li>Login Name Placeholder</li>
+                    </ul>
+                </nav>
+                <nav className="usernav">
+                    <ul className="userul">
+                        <li> <a href="/newUser">SIGN UP</a></li>
+                        <li> <a href="/newUser">LOGIN</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul className="gennav">
+                        <li> <a href="/">HOME</a></li>
+                        <li> <a href="/list">MY TO DO LIST</a></li>
+                        <li> <a href="/createNew">CREATE NEW TASK</a></li>
+                        {/* <!---<li> <a href="list">About</a></li>---> */}
+                    </ul>
+                </nav>
             </header>
-            <nav>
-                <ul class="gennav">
-                    <li> <a href="index.html">Home</a></li>
-                    <li> <a href="list.html">My To Do List</a></li>
-                </ul>
-            </nav>
-            <nav>
-                <ul>
-                    <li> <a href="detail.html"><button type="button">Update</button></a></li>
-                    {/* <!---<button type="button" onclick="detail.html">Update</button>---> */}
-                    <li> <a href="detail.html"><button type="button">Delete</button></a></li>
-                </ul>
-            </nav>
             <article>
                 <section>
-                    <h1>Welcome to my site. Please come in and stay awhile.</h1>
-                    <p> 
-                        i.	I started this web site because Christmas has always been my favorite holiday. Last year, I started selling some of my favorite Christmas products and they've become quite a hit.
-                    </p>
-
-                    <p>
-                        ii.	If you click on the personal link, you can browse my favorite Christmas pictures, stories and films. If you join my email list, I will keep you you up-to-date on all things Christmas.
-                    </p>
-                    <h2>Product Categories</h2>
-                    <ul>
-                        <li>i.	Decorations</li>
-                        <li>ii.	Recipes</li>
-                        <li>iii.	Toys</li>
-                        <li>iv.	Unique Gift Ideas</li>
-                        <li>v.	Wrapping Paper</li>
-                    </ul>
-
-                    <dl>
-                        <dt>Coffee</dt>
-                        <dd>Black Hot Drink</dd>
-                        <dt>Milk</dt>
-                        <dd>White Cold Drink</dd>
-                    </dl>
-
-                    <h3>My guarantee</h3>
-
-                    <p>If you aren't completely satisfied with everything you buy from my site, 
-                        you can return it for a full refund.<br/>
-                        <em>No questions asked!</em>
-                    </p>
+                    <h1>TO DO List</h1>
+                    <br/>
+                    <h2>Item Categories</h2>
+                    <table>
+                        <tr>
+                            <th>
+                                <img className="images" src={urgent} alt="Task1"/>
+                                URGENT!
+                            </th>
+                            <th>
+                                <img className="images" src={important} alt="Task3"/>
+                                Important
+                            </th>
+                            <th>
+                                <img className="images" src={not_urgent} alt="Task2"/>
+                                <br/>
+                                Not Urgent
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Milestone Project 1</b></h1> 
+                                            <p>Category: URGENT!</p> 
+                                            <p><b>Due Date: Friday, February 10, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Pending</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Develop a dynamic web application as a group in5.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Lab 5</b></h1> 
+                                            <p>Category: Important</p> 
+                                            <p><b>Due Date: Friday, February 17, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Incomplete</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Implement a calculator using Vanilla JavaScript.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Lab 4</b></h1> 
+                                            <p>Category: Not Urgent</p> 
+                                            <p>Due Date: Friday, February 10, 2023 11:59PM</p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Done</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Intro to JavaScript quiz</b></h1> 
+                                            <p>Category: URGENT!</p> 
+                                            <p><b>Due Date: Tuesday, February 14, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Incomplete</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Be prepared to take the quiz on the introduction to JavaScript.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Milestone Project 2</b></h1> 
+                                            <p>Category: Important</p> 
+                                            <p><b>Date: Thursday, March 9, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Incomplete</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Develop a dynamic web application as a group in5.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>JavaScript Objects, Functions, Events, Links, Images and Timers Quiz (TBD)</b></h1> 
+                                            <p>Category: Not Urgent</p> 
+                                            <p><b>Due Date: Tuesday, February 21, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Incomplete</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Be prepared to take the quiz on JavaScript Objects, Functions, Events, Links, Images and Timers.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Milestone Project 3</b></h1> 
+                                            <p>Category: URGENT!</p> 
+                                            <p><b>Due Date: Tuesday, April 4, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Pending</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Develop a dynamic web application as a group in5.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Quiz 3</b></h1> 
+                                            <p>Category: Important</p> 
+                                            <p><b>Due Date: Monday, February 20, 2023 11:00AM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Incomplete</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Be prepared to take quiz for Philosophy className</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="detailcard">
+                                    <div className="container">
+                                        <a href="/list">
+                                            <h1><b>Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery (TBD)</b></h1> 
+                                            <p>Category: Not Urgent</p> 
+                                            <p><b>Due Date: Tuesday, February 28, 2023 11:59PM</b></p>
+                                            <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
+                                            <p className="status">Staus: Done</p>
+                                            <br/>
+                                            <p>Description: </p>
+                                            <p>Be prepared to take quiz on Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery.</p><br/><br/>
+                                        </a>
+                                        <nav>
+                                            <ul className="listnav">
+                                                <li> <a href="/detail">UPDATE</a></li>
+                                                <li> <a href="/detail">DELETE</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </section>
             </article>
 
-            
+       
 
-            <footer>© 2023 Jovany Caraballo</footer>
+            <footer>© 2023 Milestone 1</footer>
         </body>
 
     </div>

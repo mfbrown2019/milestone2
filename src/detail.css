@@ -1,127 +1,143 @@
 * {
-    padding: 0px;
-    margin: 5px;
-  }
-  
-  .paw {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    animation-name: shake;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes shake {
-    0% {transform: rotate(-30deg);}
-    50% {transform: rotate(30deg);}
-    100% {transform: rotate(-30deg);}
-  }
-  
-  body {
-    background-color: #6B0504;
-  }
-  
-  header {
-    background-color: #E6AF2E;
-    padding: 2rem 0rem .5rem 0rem;
-    border-radius: 10px;
-  }
-  
-  header > nav {
-    display: flex;
-    width: 100%;
-  }
-  
-  header > div {
-    padding-left: 1rem;
-  }
-  
-  .loginname {
-    justify-content: right;
-    width: 99%;
-    height: 30px;
-  }
-  .usernav {
-    border-bottom: 3px solid black;
-    justify-content: right;
-    width: 99%;
-    padding-bottom: .5rem;
-  }
-  
-  .userul {
-    width: fit-content;
-    display: flex;
-    justify-content: right;
-    background-color: #6B0504;
-  }
-  
-  a {
-    color: #FBFFFE;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #E6AF2E;
-    font-weight: bold;
-  }
-  
-  
-  li {
-    list-style-type: none;
-    padding: 1rem;
-    margin: 0rem 1rem;
-  }
-  
-  .gennav {
-    width: fit-content;
-    display: flex;
-    margin-top: .5rem;
-    justify-content: right;
-    background-color: #6B0504;
-  }
-  
-  article {
-    background-color: #e1b95c;
-    color: black;
-    border-radius: 10px;
-    padding: 1rem;
-  }
-  
-  
-  footer {
-    color: #FBFFFE;
-    text-align: center;
-  }
+  padding: 0px;
+  margin: 5px;
+}
 
-  .detailparent {
-    display: flex;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2rem 12rem 1rem; /* 2 values = 2 rows */
-    width: 98%;
-    padding: 16px;
-    margin: 0px;
-    height: 850px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .detailcard {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 90%;
-    height: 850px;
-  }
+.top {
+  text-align: center;
+  background: -webkit-linear-gradient(-180deg, black, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .container {
-    flex-wrap: wrap;
-    padding: 2px 16px;
-    text-align: left;
-  }
+.paw {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: shake;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
 
-  .images {
-    width: 98%;
-  }
+@keyframes shake {
+  0% {transform: rotate(-30deg); margin-left: 30%;}
+  15% {transform: rotate(30deg);}
+  30% {transform: rotate(-30deg);}
+  50% {transform: rotate(30deg); margin-left: 65%;}
+  65% {transform: rotate(-30deg);}
+  80% {transform: rotate(30deg);}
+  100% {transform: rotate(-30deg); margin-left: 30%;}
+}
 
-  textarea {
-    padding-left: 4px;
-  }
+body {
+  background-color: #6B0504;
+}
+
+header {
+  background-color: #E6AF2E;
+  padding: 2rem 0rem .5rem 0rem;
+  border-radius: 10px;
+}
+
+header > nav {
+  display: flex;
+  width: 100%;
+}
+
+header > div {
+  padding-left: 1rem;
+}
+
+.loginname {
+  justify-content: right;
+  width: 99%;
+  height: 30px;
+}
+.usernav {
+  border-bottom: 3px solid black;
+  justify-content: right;
+  width: 99%;
+  padding-bottom: .5rem;
+}
+
+.userul {
+  width: fit-content;
+  display: flex;
+  justify-content: right;
+  background-color: #6B0504;
+}
+
+a {
+  color: #FBFFFE;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E6AF2E;
+  font-weight: bold;
+}
+
+
+li {
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0rem 1rem;
+}
+
+.gennav {
+  width: fit-content;
+  display: flex;
+  margin-top: .5rem;
+  justify-content: right;
+  background-color: #6B0504;
+}
+
+article {
+  background-color: #e1b95c;
+  color: black;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+
+footer {
+  color: #FBFFFE;
+  text-align: center;
+}
+
+.detailparent {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2rem 12rem 1rem; /* 2 values = 2 rows */
+  width: 98%;
+  padding: 16px;
+  margin: 0px;
+  height: 850px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.detailcard {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 90%;
+  height: fit-context;
+}
+
+.container {
+  flex-wrap: wrap;
+  padding: 2px 16px;
+  text-align: left;
+}
+
+.images {
+  width: 98%;
+}
+
+textarea {
+  padding-left: 4px;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
