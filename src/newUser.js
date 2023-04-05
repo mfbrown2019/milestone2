@@ -12,62 +12,64 @@ function NewUser() {
   return (
     <div className="NewUser">
         <body>
-            <header className="banner">
-                <h1>Welcome to Our Christmas Store</h1>
-                <p>This page should be tried in safari, chrome or Mozila.</p>
-                <img className="paw" src={panther_paw} alt="Paw" width="300px" height="400px"/>
+            <header class="banner">
+                <div>
+                    <h1>Welcome to our To-Do List App</h1>
+                    <img class="paw" src={panther_paw} alt="Paw"/>
+                </div>
+                <nav class="loginname">
+                    <ul>
+                        <li>Login Name Placeholder</li>
+                    </ul>
+                </nav>
+                <nav class="usernav">
+                    <ul class="userul">
+                        <li> <a href="/newUser">SIGN UP</a></li>
+                        <li> <a href="/newUser">LOGIN</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="gennav">
+                        <li> <a href="/">HOME</a></li>
+                        <li> <a href="/list">MY TO DO LIST</a></li>
+                    </ul>
+                </nav>
             </header>
-            <nav>
-                <ul className="gennav">
-                    <li> <a href="/">Home</a></li>
-                    <li> <a href="/list">My To Do List</a></li>
-                </ul>
-            </nav>
-            <nav>
-                <ul>
-                    <li> <a href="/detail"><button type="button">Update</button></a></li>
-                    {/* <!---<button type="button" onclick="detail">Update</button>---> */}
-                    <li> <a href="/detail"><button type="button">Delete</button></a></li>
-                </ul>
-            </nav>
+
             <article>
                 <section>
-                    <h1>Welcome to my site. Please come in and stay awhile.</h1>
+                    <h1>Welcome to our site. Please come in and stay awhile.</h1>
                     <p> 
-                        i.	I started this web site because Christmas has always been my favorite holiday. Last year, I started selling some of my favorite Christmas products and they've become quite a hit.
+                        Log in if you already have an account. If you dont have an acount, please sign up with a Username, Password, and Email.
                     </p>
-
-                    <p>
-                        ii.	If you click on the personal link, you can browse my favorite Christmas pictures, stories and films. If you join my email list, I will keep you you up-to-date on all things Christmas.
-                    </p>
-                    <h2>Product Categories</h2>
-                    <ul>
-                        <li>i.	Decorations</li>
-                        <li>ii.	Recipes</li>
-                        <li>iii.	Toys</li>
-                        <li>iv.	Unique Gift Ideas</li>
-                        <li>v.	Wrapping Paper</li>
-                    </ul>
-
-                    <dl>
-                        <dt>Coffee</dt>
-                        <dd>Black Hot Drink</dd>
-                        <dt>Milk</dt>
-                        <dd>White Cold Drink</dd>
-                    </dl>
-
-                    <h3>My guarantee</h3>
-
-                    <p>If you aren't completely satisfied with everything you buy from my site, 
-                        you can return it for a full refund.<br/>
-                        <em>No questions asked!</em>
-                    </p>
+                    
+                    <article class="login">
+                        <h1>Login</h1>
+                        <h1>Sign Up</h1>
+                        <form action="/">
+                            <label for="uname">Username:</label>
+                            <input type="text" id="uname" size='50'/><br/><br/>
+                            <label for="pass">Password:&nbsp;</label>
+                            <input type="text" id="pass" name="pass" value="" size='50'/><br/><br/>
+                            <input type="submit" value="Submit"/>
+                        </form>
+                        <form action="/">
+                            <label for="uname">Username:</label>
+                            <input type="text" id="newuname" size='50'/><br/><br/>
+                            <label for="pass">Password:</label>
+                            <input type="text" id="newpass" size='50'/><br/><br/>
+                            <label for="newemail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input type="email" id="newemail" size='50'/><br/><br/>
+                            <label>Receive Email Notifcations On Upcoming Due Dates:</label>
+                            <input type="checkbox" id="send" name="send" value="Updates"/>
+                            <br/><br/>
+                            <input type="submit" value="Submit"/>
+                        </form>
+                    </article>
                 </section>
             </article>
 
-            
-
-            <footer>© 2023 Jovany Caraballo</footer>
+            <footer>Â© 2023 Milestone 1</footer>
         </body>
 
     </div>
