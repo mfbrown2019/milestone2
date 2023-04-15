@@ -11,10 +11,13 @@ import panther_paw from './Panther-Paw.png'
 import urgent from './Urgent.png'
 import todo from './todolist.jpg'
 import './detail.css';
+import { AuthProvider } from './AuthProvider';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    // <AuthProvider>
+      <div className="App">
       <body>
         <header className="banner">
             <div className="top">
@@ -75,9 +78,10 @@ function App() {
             </section>
         </article>
 
-        <footer>© 2023 Milestone 1</footer>
+        <footer>© 2023 Milestone 2</footer>
       </body>
-    </div>
+      </div>
+    // </AuthProvider>
   );
 }
 

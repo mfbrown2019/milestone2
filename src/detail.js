@@ -52,7 +52,8 @@ function Detail() {
                                 <br/>
                                 <p>Description: </p>
                                 <textarea rows="10" cols="40">Develop a dynamic web application as a group in HTML5.</textarea><br/><br/>
-                                <form action="list.html"><button>Add Task</button></form>
+                                {/* <form action="list.html"><button>Add Task</button></form> */}
+                                <form action="/createNew"><button>Add Task</button></form>
                             </div>
                         </div>
                         <div className="detailcard">
@@ -66,7 +67,8 @@ function Detail() {
                                 <br/>
                                 <p>Description: </p>
                                 <textarea rows="10" cols="40">Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment.</textarea><br/><br/>
-                                <form action="list.html"><button>Add Task</button></form>
+                                {/* <form action="list.html"><button>Add Task</button></form> */}
+                                <form action="/createNew"><button>Add Task</button></form>
                             </div>
                         </div>
                         <div className="detailcard">
@@ -80,7 +82,8 @@ function Detail() {
                                 <br/>
                                 <p>Description: </p>
                                 <textarea rows="10" cols="40">Implement a calculator using Vanilla JavaScript.</textarea><br/><br/>
-                                <form action="list.html"><button>Add Task</button></form>
+                                {/* <form action="list.html"><button>Add Task</button></form> */}
+                                <form action="/createNew"><button>Add Task</button></form>
                             </div>
                         </div>
                     </div>
@@ -88,7 +91,7 @@ function Detail() {
                 </section>
         </article>
 
-        <footer>© 2023 Milestone 1</footer>
+        <footer>© 2023 Milestone 2</footer>
         </body>
 
     </div>

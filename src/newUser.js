@@ -7,8 +7,18 @@ import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
 import urgent from './Urgent.png'
 import './detail.css';
+import LogIn from './LoggingIn'
+import app from './FirebaseConfiguration'
+import SignIn from './FirebaseInit'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import SignUp from './SigningUp'
+import * as ReactDOM from 'react-dom';
+import App from './App';
+import Check from './Check'
+import { Routes, Route } from "react-router-dom";
 
-function NewUser() {
+function NewUser(props) {
+  const isLoggedIn = props.isLoggedIn;
   return (
     <div className="NewUser">
         <body>
@@ -42,18 +52,23 @@ function NewUser() {
                     <p> 
                         Log in if you already have an account. If you dont have an acount, please sign up with a Username, Password, and Email.
                     </p>
-                    
+
                     <article class="login">
                         <h1>Login</h1>
                         <h1>Sign Up</h1>
-                        <form action="/">
+                        {/* <form> 
                             <label for="uname">Username:</label>
-                            <input type="text" id="uname" size='50'/><br/><br/>
+                            {/* <input type="text" id="uname" size='50'/><br/><br/> }
+                            <input type="text" id="name" size='50'/><br/><br/>
                             <label for="pass">Password:&nbsp;</label>
-                            <input type="text" id="pass" name="pass" value="" size='50'/><br/><br/>
-                            <input type="submit" value="Submit"/>
-                        </form>
-                        <form action="/">
+                            {/* <input type="text" id="pass" name="pass" value="" size='50'/><br/><br/> */}
+                            {/* <input type="text" id="password" name='' size='50'/><br/><br/> }
+                            <input type="text" id="password" name='password' size='50'/><br/><br/>
+                            {/* <input type="submit" value="Submit"/> }
+                            <SignIn />
+                        </form> */}
+                        <LogIn />
+                        {/* <form>
                             <label for="uname">Username:</label>
                             <input type="text" id="newuname" size='50'/><br/><br/>
                             <label for="pass">Password:</label>
@@ -63,17 +78,22 @@ function NewUser() {
                             <label>Receive Email Notifcations On Upcoming Due Dates:</label>
                             <input type="checkbox" id="send" name="send" value="Updates"/>
                             <br/><br/>
-                            <input type="submit" value="Submit"/>
-                        </form>
+                            {/* <input type="submit" value="Submit"/> }
+                        </form> */}
+                        <SignUp />
+                        <SignIn />
                     </article>
                 </section>
             </article>
 
-            <footer>Â© 2023 Milestone 1</footer>
+            <footer>© 2023 Milestone 2</footer>
         </body>
 
     </div>
   );
 }
+// const root = ReactDOM.createRoot(document.getElementById('root')); 
+// // Try changing to isLoggedIn={true}:
+// root.render(<NewUser isLoggedIn={false} />);
 
 export default NewUser;
