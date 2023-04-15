@@ -116,7 +116,7 @@ function List() {
 
        
 
-            <footer>© 2023 Milestone 1</footer>
+            <footer>© 2023 Milestone 2</footer>
         </body>
 
     </div>
