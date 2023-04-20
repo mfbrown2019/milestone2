@@ -7,11 +7,28 @@ import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
 import urgent from './Urgent.png'
 import './detail.css';
+import { signOut } from 'firebase/auth'
+import {auth,provider} from "./FirebaseConfiguration";
+import { useContext } from 'react';
+import AuthContext from './Hooks/useAuth';
 
 function Detail() {
+  const { user } = useContext(AuthContext);
+  console.log("Detail:", user)
+  //   var Placeholder = 'Login';
+  if (user) {
+    var Placeholder = user.email;
+    console.log(Placeholder);
+  }
+  //   const [setUser] = useState({});
+  const handleLogout = async () => {
+    signOut(auth).then(() => {
+      //setUser({})
+    })
+  }
   return (
     <div className="Detail">
-        <body>
+        {/* <body> */}
             <header className="banner">
                 <div className="top">
                     <h1>Welcome to our To-Do List App</h1>
@@ -19,13 +36,28 @@ function Detail() {
                 <img className="paw" src={panther_paw} alt="Paw"/>
                 <nav className="loginname">
                     <ul>
-                        <li>Login Name Placeholder</li>
+                        {user? (
+                            <>
+                                <input readOnly type="text" id="myText" name="search" placeholder={Placeholder} />
+                            </>
+                        ) : (
+                            <></>
+                        )}
                     </ul>
                 </nav>
                 <nav className="usernav">
                     <ul className="userul">
-                        <li> <a href="/newUser">SIGN UP</a></li>
-                        <li> <a href="/newUser">LOGIN</a></li>
+                        {user? (
+                            <div>
+                                {/* <li><button onClick={handleLogout}>LOGOUT</button></li> */}
+                                <li> <a onClick={handleLogout}>LOGOUT</a></li>
+                            </div>
+                        ) : (
+                            <>
+                                <li> <a href="/newUser">SIGN UP</a></li>
+                                <li> <a href="/newUser">LOGIN</a></li>
+                            </>
+                        )}
                     </ul>
                 </nav>
                 <nav>
@@ -51,7 +83,7 @@ function Detail() {
                                 <p className="status">Staus: Pending</p>
                                 <br/>
                                 <p>Description: </p>
-                                <textarea rows="10" cols="40">Develop a dynamic web application as a group in HTML5.</textarea><br/><br/>
+                                <textarea rows="10" cols="40" defaultValue={"Develop a dynamic web application as a group in HTML5."}></textarea><br/><br/>
                                 {/* <form action="list.html"><button>Add Task</button></form> */}
                                 <form action="/createNew"><button>Add Task</button></form>
                             </div>
@@ -66,7 +98,7 @@ function Detail() {
                                 <p className="status">Staus: Done</p>
                                 <br/>
                                 <p>Description: </p>
-                                <textarea rows="10" cols="40">Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment.</textarea><br/><br/>
+                                <textarea rows="10" cols="40" defaultValue={"Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment."}></textarea><br/><br/>
                                 {/* <form action="list.html"><button>Add Task</button></form> */}
                                 <form action="/createNew"><button>Add Task</button></form>
                             </div>
@@ -81,7 +113,7 @@ function Detail() {
                                 <p className="status">Staus: Incomplete</p>
                                 <br/>
                                 <p>Description: </p>
-                                <textarea rows="10" cols="40">Implement a calculator using Vanilla JavaScript.</textarea><br/><br/>
+                                <textarea rows="10" cols="40" defaultValue={"Implement a calculator using Vanilla JavaScript."}></textarea><br/><br/>
                                 {/* <form action="list.html"><button>Add Task</button></form> */}
                                 <form action="/createNew"><button>Add Task</button></form>
                             </div>
@@ -92,8 +124,7 @@ function Detail() {
         </article>
 
         <footer>© 2023 Milestone 2</footer>
-        </body>
-
+        {/* </body> */}
     </div>
   );
 }

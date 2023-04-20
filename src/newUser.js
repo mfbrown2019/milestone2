@@ -1,4 +1,3 @@
-
 import signup from './signup.jpg'
 import home from './homepage.jpg'
 import important from './Important.png'
@@ -16,30 +15,35 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import Check from './Check'
 import { Routes, Route } from "react-router-dom";
+import { Button } from 'react-bootstrap';
+import handleLogIn from './LoggingIn';
+import LoggingIn from './LoggingIn'
+import handleSignUp from './SigningUp';
 
-function NewUser(props) {
-  const isLoggedIn = props.isLoggedIn;
+function NewUser() {
   return (
     <div className="NewUser">
-        <body>
-            <header class="banner">
+        {/* <body> */}
+            <header className="banner">
                 <div>
                     <h1>Welcome to our To-Do List App</h1>
-                    <img class="paw" src={panther_paw} alt="Paw"/>
+                    <img className="paw" src={panther_paw} alt="Paw"/>
                 </div>
-                <nav class="loginname">
+                <nav className="loginname">
                     <ul>
-                        <li>Login Name Placeholder</li>
+                        {/* <li>Login Name Placeholder</li> */}
+                        <input type="text" id="myText" name="search" placeholder="Login Name Placeholder" />
+                        {/* <input id="myText" type="text" class="searchbox1" name="search" placeholder="Search for Brand, Store or an Item..." value="text" /> */}
                     </ul>
                 </nav>
-                <nav class="usernav">
-                    <ul class="userul">
+                <nav className="usernav">
+                    <ul className="userul">
                         <li> <a href="/newUser">SIGN UP</a></li>
                         <li> <a href="/newUser">LOGIN</a></li>
                     </ul>
                 </nav>
                 <nav>
-                    <ul class="gennav">
+                    <ul className="gennav">
                         <li> <a href="/">HOME</a></li>
                         <li> <a href="/list">MY TO DO LIST</a></li>
                     </ul>
@@ -53,7 +57,7 @@ function NewUser(props) {
                         Log in if you already have an account. If you dont have an acount, please sign up with a Username, Password, and Email.
                     </p>
 
-                    <article class="login">
+                    <article className="login">
                         <h1>Login</h1>
                         <h1>Sign Up</h1>
                         {/* <form> 
@@ -67,7 +71,54 @@ function NewUser(props) {
                             {/* <input type="submit" value="Submit"/> }
                             <SignIn />
                         </form> */}
+
+
+                        {/* <div>
+                            {/* <form onSubmit={handleLogIn & NewUser}> }
+                            <form onSubmit={handleLogIn}>
+                                <label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="email" name="email" size='50'/><br/><br/>
+                                </label>
+                                <label>Password:&nbsp;
+                                    <input type="password" name="password" size='50'/><br/><br/>
+                                </label>
+                                <LogIn />
+                                {/* <Button type="submit">Sign In</Button> }
+                            </form>
+                        </div> */}
+
+
                         <LogIn />
+                        {/* <LogIn onSubmit={NewUser} /> */}
+                        {/* <form onsubmit="NewUser">
+                            <LogIn />
+                        </form> */}
+                        {/* <form>
+                            <LogIn />
+                        </form> */}
+
+
+                        {/* <div>
+                            <form onSubmit={handleSignUp}>
+                            {/* <form onSubmit={handleSignUp & NewUser}> {handleSignUp & NewUser}> "return NewUser()" }
+                                <label>Username:
+                                    <input type="name" name="name" size='50'/><br/><br/>
+                                </label>
+                                <label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="email" name="email" size='50'/><br/><br/>
+                                </label>
+                                <label>Password:
+                                    <input type="password" name="password" size='50'/><br/><br/>
+                                </label>
+                                <label>Receive Email Notifcations On Upcoming Due Dates:
+                                    <input type="checkbox" id="send" name="send" value="Updates"/><br/><br/>
+                                </label>
+                                <SignUp />
+                                {/* <Button type="submit">Sign Up</Button> }
+                            </form>
+                        </div> */}
+
+
                         {/* <form>
                             <label for="uname">Username:</label>
                             <input type="text" id="newuname" size='50'/><br/><br/>
@@ -80,20 +131,18 @@ function NewUser(props) {
                             <br/><br/>
                             {/* <input type="submit" value="Submit"/> }
                         </form> */}
+                        {/* <SignUp onSubmit={NewUser} /> */}
                         <SignUp />
+                        {/* <SignIn onSubmit={NewUser} /> */}
+
                         <SignIn />
                     </article>
                 </section>
             </article>
 
             <footer>© 2023 Milestone 2</footer>
-        </body>
-
+        {/* </body> */}
     </div>
   );
 }
-// const root = ReactDOM.createRoot(document.getElementById('root')); 
-// // Try changing to isLoggedIn={true}:
-// root.render(<NewUser isLoggedIn={false} />);
-
 export default NewUser;

@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Router from "./routes.js";
+// import Router from "./routes.js";
+import App from './App';
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from './AuthProvider';
+import AuthProvider from './AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  {/* // <AuthProvider> */}
-      <Router />
-  {/* // </AuthProvider> */}
+      {/* <Router /> */}
+      <App />
   </BrowserRouter>
 );
 

@@ -11,6 +11,39 @@ import withRouter from "./WithRouter";
 import { AuthContext } from "./AuthProvider";
 import { getAuth } from "firebase/auth";
 import app from "./FirebaseConfiguration";
+import Home from "./home";
+
+// function SignIn() {
+// // const SignIn = ({ history }) => {
+//     const [user, setUser] = useState({});
+//     const [value, setvalue] = useState('')
+//     const [isLoading, setIsLoading] = useState(true);
+//     const [isLoggedIn, setIsLoggedIn] = useState(false);
+//     const navigate = useNavigate();
+//     // const handleClick = useCallback(async e => {
+//     const handleClick =()=> {
+//         // e.preventDefault();
+//         // const { auth, provider } = e.target.elements;
+//         // setIsLoading(true);
+//         try {
+//             signInWithPopup(auth,provider);
+//             // await app
+//             //     .auth()
+//             //     .signInWithPopup(auth,provider); //.then((data)=>{
+//                 // // .signInWithPopup(auth,provider).then((data)=>{
+//                 //     // e.preventDefault();
+//                 //     console.log(data);
+//                 //     setvalue(data.user.email)
+//                 //     // localStorage.setItem("email", data.user.email)
+//                 // }).finally(() => setIsLoading(false))
+//             // history.push("/")
+//             // navigate('/')
+//         } catch (error) {
+//             alert(error);
+//         }
+//     // }, [history]);
+//     };
+   
 
 function SignIn() {
     const [value, setvalue] = useState('') 
@@ -22,28 +55,18 @@ function SignIn() {
     const [password, setpassword] = useState('')
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true);
-    const handleClick =(e)=>{
-        setIsLoading(true);
+    const navigate = useNavigate();
+    const handleClick =()=>{
         signInWithPopup(auth,provider).then((data)=>{
-            e.preventDefault();
-            console.log(data);
+            // e.preventDefault();
+            const user = data.user
+            console.log(user);
+            console.log("Google logged in as:", user.email);
             setvalue(data.user.email)
             localStorage.setItem("email", data.user.email)
-        }).finally(() => setIsLoading(false))
+            navigate("/");
+        })
     };
-    const handleName = e => {
-        setName(e.target.value)
-        console.log(name)
-    };
-    const handlepassword = e => {
-        setpassword(e.target.value);
-        console.log(password)
-    }
-    const handleemail = e => {
-        setemail(e.target.value);
-        console.log(email)
-
-    }
     const handleLogin =()=> {
         setIsLoggedIn(true);
     };
@@ -56,57 +79,56 @@ function SignIn() {
             setUser({})
         }).finally(() => setIsLoading(false))
     };
-    const setUserName = () => {
-        updateProfile(auth.currentUser, { displayName: name })
-            .then(result => {
+    // const setUserName = () => {
+    //     updateProfile(auth.currentUser, { displayName: name })
+    //         .then(result => {
 
-            })
+    //         })
 
-    };
+    // };
 
-    const loginProcess = () => {
-        return signInWithEmailAndPassword(auth, email, password)
-        // .then((userCredential) => {
-        //     // Signed in 
-        //     const user = userCredential.user;
-        //     window.location.reload()
-        //     console.log(user);
-        //     setError('')
-        // }).finally(() => setIsLoading(false))
-
-    }
-    // useEffect((value)=>{ 
     useEffect(()=>{ 
-        // if (value){
-        //     setIsLoading(false);
-        // }
         setvalue(localStorage.getItem("email"))
     }, []);
 
+
 return (
     <div>
-        {isLoggedIn ? (
-            <div>
-                <button onClick={() => {handleLogout(); logout();}}>Logout</button>
-            </div>
-        ) : (
-            <div>
-                <h1>Login With Google</h1>
-                {isLoggedIn?<App />:
-                <Button onClick={() => {handleLogin(); handleClick();}}>Sign In</Button>
-                // <div>
-                //     <form>
-                //         <label for="newemail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                //         <input onBlur={handleemail} type="email" id="newemail" size='50'/><br/><br/>
-                //         <label for="pass">Password:&nbsp;</label>
-                //         <input onBlur={handlepassword} type="text" id="password" name='password' size='50'/><br/><br/>
-                //         <Button onClick={() => {handleLogin(); handleClick();}}>Sign In</Button>
-                //     </form>
-                // </div>}
-                }
-            </div>
-        )}
+        <h1>Login With Google</h1>
+        <Button onClick={handleClick}>Sign In</Button>
+        {/* {value?<Home />:
+        <Button onClick={handleClick}>Sign In</Button>
+        // <Button onClick={() => {handleLogin(); handleClick();}}>Sign In</Button>
+        } */}
     </div>
 );
 };
+// return (
+//     <div>
+//         {isLoggedIn ? (
+//             <div>
+//                 {/* <button onClick={() => {handleLogout(); logout();}}>Logout</button> */}
+//                 <button onClick={logout}>Logout</button>
+//             </div>
+//         ) : (
+//             <div>
+//                 <h1>Login With Google</h1>
+//                 {isLoggedIn?<App />:
+//                 <Button onClick={handleClick}>Sign In</Button>
+//                 // <Button onClick={() => {handleLogin(); handleClick();}}>Sign In</Button>
+//                 // <div>
+//                 //     <form>
+//                 //         <label for="newemail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+//                 //         <input onBlur={handleemail} type="email" id="newemail" size='50'/><br/><br/>
+//                 //         <label for="pass">Password:&nbsp;</label>
+//                 //         <input onBlur={handlepassword} type="text" id="password" name='password' size='50'/><br/><br/>
+//                 //         <Button onClick={() => {handleLogin(); handleClick();}}>Sign In</Button>
+//                 //     </form>
+//                 // </div>}
+//                 }
+//             </div>
+//         )}
+//     </div>
+// );
+// };
 export default SignIn;
