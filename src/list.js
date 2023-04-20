@@ -147,7 +147,7 @@ function List() {
        
 
             <footer>© 2023 Milestone 1</footer>
-        </body>
+        {/* </body> */}
 
     </div>
   );

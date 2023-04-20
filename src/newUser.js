@@ -19,8 +19,17 @@ import { Button } from 'react-bootstrap';
 import handleLogIn from './LoggingIn';
 import LoggingIn from './LoggingIn'
 import handleSignUp from './SigningUp';
+import { useContext } from 'react'
+import AuthContext from './Hooks/useAuth'
 
 function NewUser() {
+  const { user } = useContext(AuthContext);
+  console.log("Home:", user)
+  //   var Placeholder = 'Login';
+  if (user) {
+      var Placeholder = user.email;
+      console.log(Placeholder);
+  }
   return (
     <div className="NewUser">
         {/* <body> */}
@@ -31,9 +40,13 @@ function NewUser() {
                 </div>
                 <nav className="loginname">
                     <ul>
-                        {/* <li>Login Name Placeholder</li> */}
-                        <input type="text" id="myText" name="search" placeholder="Login Name Placeholder" />
-                        {/* <input id="myText" type="text" class="searchbox1" name="search" placeholder="Search for Brand, Store or an Item..." value="text" /> */}
+                        {user? (
+                            <>
+                                <input readOnly type="text" id="myText" name="search" placeholder={Placeholder} />
+                            </>
+                        ) : (
+                            <></>
+                        )}
                     </ul>
                 </nav>
                 <nav className="usernav">
