@@ -91,7 +91,7 @@ function CreateNew() {
             </form>
         </article>
 
-        <footer>© 2023 Milestone 2</footer>
+        <footer>© 2023 Milestone 3</footer>
         {/* </body> */}
     </div>
   );
