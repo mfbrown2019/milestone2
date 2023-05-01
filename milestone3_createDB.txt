@@ -1,99 +1,85 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2636
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red180\green185\blue195;
-\red0\green0\blue0;\red255\green255\blue255;\red203\green203\blue202;\red141\green213\blue254;\red167\green197\blue151;
-\red194\green125\blue100;\red202\green202\blue202;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c75611\c77585\c80831;
-\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c83320\c83320\c83112;\cssrgb\c61545\c86704\c99884;\cssrgb\c71035\c80830\c65726;
-\cssrgb\c80772\c56796\c46790;\cssrgb\c83137\c83137\c83137;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+use milestone3_createDB
 
-\f0\fs24 \cf2 \cb3 use milestone3_createDB\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 db.articles.insertMany(\cf5 \cb6 \strokec7 [\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 1\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Milestone Project 1"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "URGENT!"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Friday, February 10, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Pending"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Develop a dynamic web application as a group"\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 2\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Lab 5"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Important"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Friday, February 17, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Incomplete"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Implement a calculator using Vanilla JavaScript."\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 3\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Lab 4"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Not Urgent"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Friday, February 10, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Done"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment."\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 4\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Intro to JavaScript quiz"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "URGENT!"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Tuesday, February 14, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Incomplete"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Be prepared to take the quiz on the introduction to JavaScript"\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 5\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Milestone Project 2"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Important"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Thursday, March 9, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Incomplete"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Develop a dynamic web application as a group"\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 6\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "JavaScript Objects, Functions, Events, Links, Images and Timers Quiz (TBD)"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Not Urgent"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Tuesday, February 21, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Incomplete"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Be prepared to take the quiz on JavaScript Objects, Functions, Events, Links, Images and Timers."\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 7\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Milestone Project 3"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "URGENT!"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Tuesday, April 4, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Pending"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Develop a dynamic web application as a group"\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 8\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Quiz 3"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Important"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Monday, February 20, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Incomplete"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Be prepared to take the quiz for Philosophy of Math"\cf5 \strokec7 \
-        \},\
-        \{\
-                \cf5 \strokec8 "id"\cf5 \strokec7 : \cf5 \strokec9 9\cf5 \strokec7 ,\
-                \cf5 \strokec8 "title"\cf5 \strokec7 : \cf5 \strokec10 "Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery (TBD)"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Category"\cf5 \strokec7 : \cf5 \strokec10 "Not Urgent"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Due"\cf5 \strokec7 : \cf5 \strokec10 "Tuesday, February 28, 2023 11:59PM"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "Location"\cf5 \strokec7 : \cf5 \strokec10 "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "status"\cf5 \strokec7 : \cf5 \strokec10 "Done"\cf5 \strokec7 ,\
-                \cf5 \strokec8 "content"\cf5 \strokec7 : \cf5 \strokec10 "Be prepared to take the quiz on Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery"\cf5 \strokec7 \
-        \}\
-]\cf11 \cb1 \strokec11 \
-\cf2 \cb3 \strokec4 )}
+db.articles.insertMany([
+         {
+                 "id": 1,
+                 "title": "Milestone Project 1",
+                 "Category": "URGENT!",
+                 "Due": "Friday, February 10, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Pending",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 2,
+                 "title": "Lab 5",
+                 "Category": "Important",
+                 "Due": "Friday, February 17, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Implement a calculator using Vanilla JavaScript."
+         },
+         {
+                 "id": 3,
+                 "title": "Lab 4",
+                 "Category": "Not Urgent",
+                 "Due": "Friday, February 10, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Done",
+                 "content": "Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment."
+         },
+         {
+                 "id": 4,
+                 "title": "Intro to JavaScript quiz",
+                 "Category": "URGENT!",
+                 "Due": "Tuesday, February 14, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz on the introduction to JavaScript"
+         },
+         {
+                 "id": 5,
+                 "title": "Milestone Project 2",
+                 "Category": "Important",
+                 "Due": "Thursday, March 9, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 6,
+                 "title": "JavaScript Objects, Functions, Events, Links, Images and Timers Quiz (TBD)",
+                 "Category": "Not Urgent",
+                 "Due": "Tuesday, February 21, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz on JavaScript Objects, Functions, Events, Links, Images and Timers."
+         },
+         {
+                 "id": 7,
+                 "title": "Milestone Project 3",
+                 "Category": "URGENT!",
+                 "Due": "Tuesday, April 4, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Pending",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 8,
+                 "title": "Quiz 3",
+                 "Category": "Important",
+                 "Due": "Monday, February 20, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz for Philosophy of Math"
+         },
+         {
+                 "id": 9,
+                 "title": "Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery (TBD)",
+                 "Category": "Not Urgent",
+                 "Due": "Tuesday, February 28, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Done",
+                 "content": "Be prepared to take the quiz on Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery"
+         }
+])
