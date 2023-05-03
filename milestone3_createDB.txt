@@ -1,0 +1,85 @@
+use milestone3_createDB
+
+db.articles.insertMany([
+         {
+                 "id": 1,
+                 "title": "Milestone Project 1",
+                 "Category": "URGENT!",
+                 "Due": "Friday, February 10, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Pending",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 2,
+                 "title": "Lab 5",
+                 "Category": "Important",
+                 "Due": "Friday, February 17, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Implement a calculator using Vanilla JavaScript."
+         },
+         {
+                 "id": 3,
+                 "title": "Lab 4",
+                 "Category": "Not Urgent",
+                 "Due": "Friday, February 10, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Done",
+                 "content": "Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment."
+         },
+         {
+                 "id": 4,
+                 "title": "Intro to JavaScript quiz",
+                 "Category": "URGENT!",
+                 "Due": "Tuesday, February 14, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz on the introduction to JavaScript"
+         },
+         {
+                 "id": 5,
+                 "title": "Milestone Project 2",
+                 "Category": "Important",
+                 "Due": "Thursday, March 9, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 6,
+                 "title": "JavaScript Objects, Functions, Events, Links, Images and Timers Quiz (TBD)",
+                 "Category": "Not Urgent",
+                 "Due": "Tuesday, February 21, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz on JavaScript Objects, Functions, Events, Links, Images and Timers."
+         },
+         {
+                 "id": 7,
+                 "title": "Milestone Project 3",
+                 "Category": "URGENT!",
+                 "Due": "Tuesday, April 4, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Pending",
+                 "content": "Develop a dynamic web application as a group"
+         },
+         {
+                 "id": 8,
+                 "title": "Quiz 3",
+                 "Category": "Important",
+                 "Due": "Monday, February 20, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Incomplete",
+                 "content": "Be prepared to take the quiz for Philosophy of Math"
+         },
+         {
+                 "id": 9,
+                 "title": "Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery (TBD)",
+                 "Category": "Not Urgent",
+                 "Due": "Tuesday, February 28, 2023 11:59PM",
+                 "Location": "George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901",
+                 "status": "Done",
+                 "content": "Be prepared to take the quiz on Scripting the DOM with JavaScript, testing, debugging, Modern JS and JQuery"
+         }
+])

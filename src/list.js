@@ -10,11 +10,12 @@ import './list.css';
 import tasks from './tasks.json'
 import { signOut } from 'firebase/auth'
 import {auth,provider} from "./FirebaseConfiguration";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import AuthContext from './Hooks/useAuth';
 
 function List() {
   const { user } = useContext(AuthContext);
+  const [tasklist, setTasks] = useState(tasks)
   console.log("List:", user)
   //   var Placeholder = 'Login';
   if (user) {
@@ -27,6 +28,13 @@ function List() {
       //setUser({})
     })
   }
+
+    const filterdata = (e) => {
+        const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        setTasks(filteredTasks.length > 0 ? filteredTasks : tasks);
+    }
+
+
   return (
     <div className="List">
         {/* <body> */}
@@ -73,6 +81,11 @@ function List() {
             <article>
                 <section>
                     <h1>TO DO List</h1>
+                    <input className='filterBar' onChange={e => {
+                        setTasks([]);
+                        filterdata(e)
+                        }
+                    }></input>
                     <br/>
                     <h2>Item Categories</h2>
                     <div className='detailparent'>
@@ -89,10 +102,10 @@ function List() {
                             Not Urgent
                         </div>
                         {
-                            tasks.map( (task,index) => {
-                                if (index%3 === 0) {
+                            tasklist.map((task,index) => {
+                                if (task['Category'] == "URGENT!") {
                                     return(
-                                        <div className="detailcard">
+                                        <div className="detailcard urgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> {/* check keys and make new component jsx page */}
@@ -114,9 +127,33 @@ function List() {
                                         </div>
                                     )
                                 }
-                                else{
+                                else if (task['Category'] == "Important") {
                                     return(
-                                        <div className="detailcard">
+                                        <div className="detailcard important">
+                                            <div className="container">
+                                                <a href="/list">
+                                                    <h1><b>{task.title}</b></h1> 
+                                                    <p>Category: {task.Category}</p> 
+                                                    <p><b>Due Date: {task.Due}</b></p>
+                                                    <p>Location: {task.Location}</p>
+                                                    <p className="status">Staus: {task.status}</p>
+                                                    <br/>
+                                                    <p>Description: </p>
+                                                    <p>{task.content}</p><br/><br/>
+                                                </a>
+                                                <nav>
+                                                    <ul className="listnav">
+                                                        <li> <a href="/detail">UPDATE</a></li>
+                                                        <li> <a href="/detail">DELETE</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                                else {
+                                    return(
+                                        <div className="detailcard noturgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> 
@@ -146,7 +183,7 @@ function List() {
 
        
 
-            <footer>© 2023 Milestone 1</footer>
+            <footer>© 2023 Milestone 3</footer>
         {/* </body> */}
 
     </div>

@@ -141,6 +141,16 @@
     padding: 3rem;
   }
   
+  .urgent {
+    grid-column: 1/2;
+  }
+  .important {
+    grid-column: 2/3;
+  }
+  .noturgent {
+    grid-column: 3/4;
+  }
+
   .detailcard {
     background-color: #cda853;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
