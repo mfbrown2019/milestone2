@@ -20,22 +20,65 @@ import { useContext } from 'react';
 import AuthContext from './Hooks/useAuth';
 import React, {useEffect, useState} from "react";
 import {auth,provider} from "./FirebaseConfiguration";
+import axios from 'axios';
 
 
 function Home() {
   const { user } = useContext(AuthContext);
   console.log("Home:", user)
-//   var Placeholder = 'Login';
+  // var Placeholder = 'Login';
   if (user) {
     var Placeholder = user.email;
     console.log(Placeholder);
   }
-//   const [setUser] = useState({});
+  // const [setUser] = useState({});
   const handleLogout = async () => {
     signOut(auth).then(() => {
       //setUser({})
     })
   }
+
+  const state = {
+    title: '',
+    body: '',
+    posts: []
+  };
+
+  const handleChange = () => {
+    const target = user.target;
+    const name = user.name;
+    const value = user.value;
+    
+    this.setState({ [name]: value });
+    console.log('State1', this.state);
+  };
+  console.log('State2', state);
+
+  const submit = (event) => {
+    event.preventDefault();
+
+    const payload = {
+      title: this.state.title,
+      body: this.state.body
+    };
+
+    axios({
+      url: '/api/save',
+      method: 'POST',
+      data: payload
+    })
+      .then(() => {
+        console.log('Data has been sent to the server');
+        //this.resetUserInputs();
+        //this.getBlogPost();
+      })
+      .catch(() => {
+        console.log('Internal server error');
+      });;
+  };
+
+
+
   return (
     <AuthProvider>
       <div className="Home">
@@ -50,7 +93,7 @@ function Home() {
                 <ul>
                     {user? (
                         <>
-                            <input readOnly type="text" id="myText" name="search" placeholder={Placeholder} />
+                            <input readOnly type="text" id="myText" name="search" onChange={handleChange} placeholder={Placeholder} />
                         </>
                     ) : (
                         <></>

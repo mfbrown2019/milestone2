@@ -95,7 +95,7 @@ function List() {
                                         <div className="detailcard">
                                             <div className="container">
                                                 <a href="/list">
-                                                    <h1><b>{task.title}</b></h1> 
+                                                    <h1><b>{task.title}</b></h1> {/* check keys and make new component jsx page */}
                                                     <p>Category: {task.Category}</p> 
                                                     <p><b>Due Date: {task.Due}</b></p>
                                                     <p>Location: {task.Location}</p>
