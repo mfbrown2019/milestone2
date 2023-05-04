@@ -148,7 +148,7 @@ function List() {
                                                 <nav>
                                                     <ul className="listnav">
                                                         <li> <a href="/detail">UPDATE</a></li>
-                                                        <li> <a href="/detail">DELETE</a></li>
+                                                        {/* <li> <a href="/detail">DELETE</a></li> */}
                                                     </ul>
                                                 </nav>
                                             </div>
@@ -172,7 +172,7 @@ function List() {
                                                 <nav>
                                                     <ul className="listnav">
                                                         <li> <a href="/detail">UPDATE</a></li>
-                                                        <li> <a href="/detail">DELETE</a></li>
+                                                        {/* <li> <a href="/detail">DELETE</a></li> */}
                                                     </ul>
                                                 </nav>
                                             </div>
@@ -196,7 +196,7 @@ function List() {
                                                 <nav>
                                                     <ul className="listnav">
                                                         <li> <a href="/detail">UPDATE</a></li>
-                                                        <li> <a href="/detail">DELETE</a></li>
+                                                        {/* <li> <a href="/detail">DELETE</a></li> */}
                                                     </ul>
                                                 </nav>
                                             </div>
