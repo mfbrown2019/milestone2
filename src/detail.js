@@ -5,21 +5,50 @@ import important from './Important.png'
 import login from './login.jpg'
 import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
+import axios from 'axios';
 import urgent from './Urgent.png'
 import './detail.css';
 import { signOut } from 'firebase/auth'
 import {auth,provider} from "./FirebaseConfiguration";
 import { useContext } from 'react';
 import AuthContext from './Hooks/useAuth';
+import { useState, useEffect } from 'react';
 
 function Detail() {
-  const { user } = useContext(AuthContext);
-  console.log("Detail:", user)
-  //   var Placeholder = 'Login';
-  if (user) {
-    var Placeholder = user.email;
-    console.log(Placeholder);
-  }
+
+    const [tasklist_real, setTasks_real] = useState([]);
+    const [description, setDescription] = useState("");
+    const { user } = useContext(AuthContext);
+
+    //   var Placeholder = 'Login';
+    if (user) {
+        var Placeholder = user.email;
+        console.log(Placeholder);
+    }
+    console.log("List:", user)
+
+    useEffect(() => {
+        getUserData();
+      }, []);
+    
+
+    let getUserData = () => {
+        axios.get('http://localhost:8080/')
+            .then((response) => {
+            const data = response.data;
+            let temp = []
+            temp = data
+
+            setTasks_real(temp)
+            console.log('Data has been received!!');
+            })
+            .catch(() => {
+            alert('Error retrieving data!!!');
+            });
+    }
+
+
+
   //   const [setUser] = useState({});
   const handleLogout = async () => {
     signOut(auth).then(() => {
@@ -72,53 +101,29 @@ function Detail() {
                 <section>
                     <h2>Task Highlights</h2>
                     <p>Here you can see all of your upcoming tasks in your logbook and their details along with a brief explanation.</p>
-                    <div className="detailparent">
-                        <div className="detailcard">
-                            <img className="images" src={urgent} alt="Task1"/>
-                            <div className="container">
-                                <h3><b>Milestone Project 1</b></h3> 
-                                <p>Category: URGENT!</p> 
-                                <p>Due Date: Friday, February 10, 2023 11:59PM</p>
-                                <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
-                                <p className="status">Staus: Pending</p>
-                                <br/>
-                                <p>Description: </p>
-                                <textarea rows="10" cols="40" defaultValue={"Develop a dynamic web application as a group in HTML5."}></textarea><br/><br/>
-                                {/* <form action="list.html"><button>Add Task</button></form> */}
-                                <form action="/createNew"><button>Add Task</button></form>
-                            </div>
-                        </div>
-                        <div className="detailcard">
-                            <img className="images" src={not_urgent} alt="Task2"/>
-                            <div className="container">
-                                <h3><b>Lab 4</b></h3> 
-                                <p>Category: Not Urgent</p> 
-                                <p>Due Date: Friday, February 10, 2023 11:59PM</p>
-                                <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
-                                <p className="status">Staus: Done</p>
-                                <br/>
-                                <p>Description: </p>
-                                <textarea rows="10" cols="40" defaultValue={"Tailwind, CSS Preprocessor, Basic JavaScript and Website Evaluation Assignment."}></textarea><br/><br/>
-                                {/* <form action="list.html"><button>Add Task</button></form> */}
-                                <form action="/createNew"><button>Add Task</button></form>
-                            </div>
-                        </div>
-                        <div className="detailcard">
-                            <img className="images" src={important} alt="Task3"/>
-                            <div className="container">
-                                <h3><b>Lab 5</b></h3> 
-                                <p>Category: Important</p> 
-                                <p>Due Date: Friday, February 17, 2023 11:59PM</p>
-                                <p>Location: George M. Skurla Hall College Of Aeronautics - 180 W University Blvd, Melbourne, FL 32901</p>
-                                <p className="status">Staus: Incomplete</p>
-                                <br/>
-                                <p>Description: </p>
-                                <textarea rows="10" cols="40" defaultValue={"Implement a calculator using Vanilla JavaScript."}></textarea><br/><br/>
-                                {/* <form action="list.html"><button>Add Task</button></form> */}
-                                <form action="/createNew"><button>Add Task</button></form>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                            tasklist_real.map((task,index) => {
+                                    return(
+                                        <div className="detailcard urgent">
+                                            <div className="">
+                                                <form className="formalign" action="/list">
+                                                    <h1><b>{task.title}</b></h1> {/* check keys and make new component jsx page */}
+                                                    <p>Category: {task.Category}</p> 
+                                                    <p><b>Due Date: {task.Due}</b></p>
+                                                    <p>Location: {task.Location}</p>
+                                                    <p className="status">Staus: {task.status}</p>
+                                                    <br/>
+                                                    <p>Description: </p>
+                                                    <textarea rows="10" cols="50" name="content" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                                                    <br></br>
+                                                    <input type='submit' value={'Update'}></input>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            )
+                        }
             
                 </section>
         </article>
