@@ -1,11 +1,13 @@
 import signup from './signup.jpg'
 import home from './homepage.jpg'
 import important from './Important.png'
+import React, { Component } from 'react';
 import login from './login.jpg'
 import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
 import urgent from './Urgent.png'
 // import './detail.css';
+import axios from 'axios';
 import './list.css';
 import tasks from './tasks.json'
 import { signOut } from 'firebase/auth'
@@ -14,22 +16,44 @@ import { useContext, useState } from 'react';
 import AuthContext from './Hooks/useAuth';
 
 function List() {
-  const { user } = useContext(AuthContext);
-  const [tasklist, setTasks] = useState(tasks)
-  console.log("List:", user)
-  //   var Placeholder = 'Login';
-  if (user) {
-    var Placeholder = user.email;
-    console.log(Placeholder);
-  }
-  //   const [setUser] = useState({});
-  const handleLogout = async () => {
-    signOut(auth).then(() => {
-      //setUser({})
-    })
-  }
+    const { user } = useContext(AuthContext);
+
+    const [tasklist, setTasks] = useState([])
+    console.log("List:", user)
+    //   var Placeholder = 'Login';
+    if (user) {
+        var Placeholder = user.email;
+        console.log(Placeholder);
+    }
+    //   const [setUser] = useState({});
+    const handleLogout = async () => {
+        signOut(auth).then(() => {
+        //setUser({})
+        })
+    }
+    
+
+    let getUserData = () => {
+        axios.get('http://localhost:8080/')
+            .then((response) => {
+            const data = response.data;
+            let temp = []
+            temp = data
+
+            setTasks(temp)
+            console.log('Data has been received!!');
+            })
+            .catch(() => {
+            alert('Error retrieving data!!!');
+            });
+    }
+
+    getUserData();
+
+
 
     const filterdata = (e) => {
+        getUserData();
         const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(e.target.value.toLowerCase()));
         setTasks(filteredTasks.length > 0 ? filteredTasks : tasks);
     }

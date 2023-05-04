@@ -47,7 +47,7 @@ class AddNew extends React.Component {
         alert('Error retrieving data!!!');
       });
   }
-
+  
   handleChange = ({ target }) => { //////////
     const { name, value } = target;
     this.setState({ [name]: value });
@@ -86,6 +86,8 @@ class AddNew extends React.Component {
       .catch(() => {
         console.log('Internal server error');
       });;
+
+    
   };
 
   resetUserInputs = () => {
@@ -131,7 +133,7 @@ class AddNew extends React.Component {
           <label htmlFor="tname">Task Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
           <input type="text" id="tname" name="title" maxLength='50' value={this.state.title} onChange={this.handleChange}/><br/><br/>
           <label htmlFor="tcat">Task Category:</label>
-          <input type="text" id="tcat" name="Category" maxLength='50' value={this.state.Category} onChange={this.handleChange}/><br/><br/>
+          <input type="text" id="tcat" name="Category" maxLength='50' value={this.state.Category} onChange={this.handleChange} placeholder='Urgent! or Important or Not Urgent'/><br/><br/>
           <label htmlFor="tdue">Task Due Date:</label>
           <input type="text" id="tdue" name="Due" maxLength='50' value={this.state.Due} onChange={this.handleChange}/><br/><br/>
           <label htmlFor="tstat">Task Status: &nbsp;&nbsp;&nbsp;&nbsp;</label>
