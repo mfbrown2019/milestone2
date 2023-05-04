@@ -106,6 +106,7 @@ class AddNew extends React.Component {
   displayUserData = (posts) => {
 
     if (!posts.length) return null;
+    console.log(posts);
 
 
     return posts.map((post, index) => (
@@ -147,34 +148,6 @@ class AddNew extends React.Component {
           {/* <input type="submit" value="Add Task"/> */}
           <Button type="submit">Add Task</Button>
       </form>
-      {/* <div className="app">
-        <h2>Welcome to the best app ever</h2>
-        <form onSubmit={this.submit}>
-          <div className="form-input">
-            <input 
-              type="text"
-              name="title"
-              placeholder="Title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <textarea
-              placeholder="body"
-              name="body"
-              cols="30"
-              rows="10"
-              value={this.state.body}
-              onChange={this.handleChange}
-            >
-              
-            </textarea>
-          </div>
-
-          <button>Submit</button>
-        </form> */}
-
         <div className="blog-">
             {this.displayUserData(this.state.posts)}
         </div>
@@ -194,3 +167,31 @@ export default withRouter(AddNew);
     //     status: "Pending",
     //     content: "Develop a dynamic web application as a group"
     //   };
+
+    // <div className="app">
+    //     <h2>Welcome to the best app ever</h2>
+    //     <form onSubmit={this.submit}>
+    //       <div className="form-input">
+    //         <input 
+    //           type="text"
+    //           name="title"
+    //           placeholder="Title"
+    //           value={this.state.title}
+    //           onChange={this.handleChange}
+    //         />
+    //       </div>
+    //       <div className="form-input">
+    //         <textarea
+    //           placeholder="body"
+    //           name="body"
+    //           cols="30"
+    //           rows="10"
+    //           value={this.state.body}
+    //           onChange={this.handleChange}
+    //         >
+              
+    //         </textarea>
+    //       </div>
+
+    //       <button>Submit</button>
+    //     </form>
