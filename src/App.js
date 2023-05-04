@@ -4,8 +4,8 @@ import Detail from './detail';
 import NewUser from './newUser';
 import CreateNew from './createNew';
 import List from './list';
-import Profile from "./Check";
-import reportWebVitals from './reportWebVitals';
+// import Profile from "./Check";
+// import reportWebVitals from './reportWebVitals';
 
 import { Routes, Route } from "react-router-dom";
 import {AuthProvider} from "./AuthProvider";

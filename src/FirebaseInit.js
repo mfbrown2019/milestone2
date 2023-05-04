@@ -1,17 +1,8 @@
-import React, {useEffect, useState, useCallback, useContext} from "react";
+import React from "react";
 import {auth,provider} from "./FirebaseConfiguration"
-import {signInWithPopup, updateProfile, signOut} from "firebase/auth"; 
-import NewUser from "./newUser"
+import {signInWithPopup} from "firebase/auth"; 
 import { Button } from 'react-bootstrap';
-import App from "./App";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import useAuth from "./Hooks/useAuth";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import withRouter from "./WithRouter";
-import { AuthContext } from "./AuthProvider";
-import { getAuth } from "firebase/auth";
-import app from "./FirebaseConfiguration";
-import Home from "./home";
+import { useNavigate } from 'react-router-dom';
 
 // function SignIn() {
 // // const SignIn = ({ history }) => {
@@ -46,15 +37,15 @@ import Home from "./home";
    
 
 function SignIn() {
-    const [value, setvalue] = useState('') 
-    const googleprovider = new GoogleAuthProvider();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [user, setUser] = useState({});
-    const [email, setemail] = useState('');
-    const [name, setName] = useState('')
-    const [password, setpassword] = useState('')
-    const [error, setError] = useState('')
-    const [isLoading, setIsLoading] = useState(true);
+    // const [value, setvalue] = useState('') 
+    // const googleprovider = new GoogleAuthProvider();
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [user, setUser] = useState({});
+    // const [email, setemail] = useState('');
+    // const [name, setName] = useState('')
+    // const [password, setpassword] = useState('')
+    // const [error, setError] = useState('')
+    // const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const handleClick =()=>{
         signInWithPopup(auth,provider).then((data)=>{
@@ -62,23 +53,23 @@ function SignIn() {
             const user = data.user
             console.log(user);
             console.log("Google logged in as:", user.email);
-            setvalue(data.user.email)
+            // setvalue(data.user.email)
             localStorage.setItem("email", data.user.email)
             navigate("/");
         })
     };
-    const handleLogin =()=> {
-        setIsLoggedIn(true);
-    };
-    const handleLogout =()=> {
-        setIsLoggedIn(false);
-    };
-    const logout = () => {
-        setIsLoading(true)
-        signOut(auth).then(() => {
-            setUser({})
-        }).finally(() => setIsLoading(false))
-    };
+    // const handleLogin =()=> {
+    //     setIsLoggedIn(true);
+    // };
+    // const handleLogout =()=> {
+    //     setIsLoggedIn(false);
+    // };
+    // const logout = () => {
+    //     setIsLoading(true)
+    //     signOut(auth).then(() => {
+    //         setUser({})
+    //     }).finally(() => setIsLoading(false))
+    // };
     // const setUserName = () => {
     //     updateProfile(auth.currentUser, { displayName: name })
     //         .then(result => {
@@ -87,9 +78,9 @@ function SignIn() {
 
     // };
 
-    useEffect(()=>{ 
-        setvalue(localStorage.getItem("email"))
-    }, []);
+    // useEffect(()=>{ 
+    //     setvalue(localStorage.getItem("email"))
+    // }, []);
 
 
 return (

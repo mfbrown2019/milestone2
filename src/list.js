@@ -1,8 +1,6 @@
-import signup from './signup.jpg'
-import home from './homepage.jpg'
+
 import important from './Important.png'
-import React, { Component } from 'react';
-import login from './login.jpg'
+import React from 'react';
 import { useEffect } from 'react';
 import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
@@ -12,7 +10,7 @@ import axios from 'axios';
 import './list.css';
 import tasks from './tasks.json'
 import { signOut } from 'firebase/auth'
-import {auth,provider} from "./FirebaseConfiguration";
+import {auth} from "./FirebaseConfiguration";
 import { useContext, useState } from 'react';
 import AuthContext from './Hooks/useAuth';
 
@@ -89,7 +87,7 @@ function List() {
                         {user? (
                             <div>
                                 {/* <li><button onClick={handleLogout}>LOGOUT</button></li> */}
-                                <li> <a onClick={handleLogout}>LOGOUT</a></li>
+                                <li> <a href='/' onClick={handleLogout}>LOGOUT</a></li>
                             </div>
                         ) : (
                             <>
@@ -133,9 +131,9 @@ function List() {
                         </div>
                         {
                             tasklist.map((task,index) => {
-                                if (task['Category'] == "URGENT!") {
+                                if (task['Category'] === "URGENT!") {
                                     return(
-                                        <div className="detailcard urgent">
+                                        <div key={index} className="detailcard urgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> {/* check keys and make new component jsx page */}
@@ -157,9 +155,9 @@ function List() {
                                         </div>
                                     )
                                 }
-                                else if (task['Category'] == "Important") {
+                                else if (task['Category'] === "Important") {
                                     return(
-                                        <div className="detailcard important">
+                                        <div key={index} className="detailcard important">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> 
@@ -183,7 +181,7 @@ function List() {
                                 }
                                 else {
                                     return(
-                                        <div className="detailcard noturgent">
+                                        <div key={index} className="detailcard noturgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> 

@@ -1,17 +1,10 @@
-import React, {useEffect, useState, useCallback, useContext} from "react";
-import {auth,provider} from "./FirebaseConfiguration"
-import {signInWithPopup, updateProfile, signOut} from "firebase/auth"; 
-import NewUser from "./newUser"
+import React from "react";
 import { Button } from 'react-bootstrap';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import useAuth from "./Hooks/useAuth";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 import withRouter from "./WithRouter";
 // import { AuthContext } from "./AuthProvider";
-import AuthContext from "./Hooks/useAuth";
 import { getAuth } from "firebase/auth";
-import app from "./FirebaseConfiguration";
-import AuthProvider from "./AuthProvider";
 
 // // const LogIn = ({ history }) => {
 // const LogIn = () => {
@@ -38,9 +31,9 @@ import AuthProvider from "./AuthProvider";
 
 // const LogIn = ({ history }) => {
 const LogIn = () => {
-    const [user, setUser] = useState({})
-    const [error, setError] = useState('')
-    const [name, setName] = useState('')
+    // const [user, setUser] = useState({})
+    // const [error, setError] = useState('')
+    // const [name, setName] = useState('')
     const auth = getAuth();
     const navigate = useNavigate();
     const handleLogIn = (async (e) => {

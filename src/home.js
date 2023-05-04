@@ -4,23 +4,17 @@ import './home.css';
 
 import signup from './signup.jpg'
 import home from './homepage.jpg'
-import important from './Important.png'
 import login from './login.jpg'
-import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
-import urgent from './Urgent.png'
 import todo from './todolist.jpg'
 import './detail.css';
 import { AuthProvider } from './AuthProvider';
 // import AuthProvider from './AuthProvider';
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import AuthContext from './Hooks/useAuth';
-import React, {useEffect, useState} from "react";
-import {auth,provider} from "./FirebaseConfiguration";
-import axios from 'axios';
+import React from "react";
+import {auth} from "./FirebaseConfiguration";
 
 
 function Home() {
@@ -64,7 +58,7 @@ function Home() {
                     {user? (
                         <div>
                             {/* <li><button onClick={handleLogout}>LOGOUT</button></li> */}
-                            <li> <a onClick={handleLogout}>LOGOUT</a></li>
+                            <li> <a href='/' onClick={handleLogout}>LOGOUT</a></li>
                         </div>
                     ) : (
                         <>
