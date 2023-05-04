@@ -11,6 +11,7 @@ import { signOut } from 'firebase/auth'
 import {auth,provider} from "./FirebaseConfiguration";
 import { useContext } from 'react';
 import AuthContext from './Hooks/useAuth';
+import AddNew from './AddingNew';
 
 function CreateNew() {
   const { user } = useContext(AuthContext);
@@ -72,7 +73,7 @@ function CreateNew() {
         <article className="contact">
             <h1>Create New Task</h1>
         <p>New tasks created here will be added to your todo list page and can be edited.</p><br/>
-            <form className="formalign" action="/list">
+            {/* <form className="formalign" action="/list">
                 <label htmlFor="tname">Task Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" id="tname" name="tname" maxLength='50'/><br/><br/>
                 <label htmlFor="tcat">Task Category:</label>
@@ -88,7 +89,8 @@ function CreateNew() {
                 <textarea rows="10" cols="50"></textarea>
                 <br/><br/>
                 <input type="submit" value="Add Task"/>
-            </form>
+            </form> */}
+            <AddNew />
         </article>
 
         <footer>© 2023 Milestone 3</footer>
