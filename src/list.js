@@ -133,7 +133,7 @@ function List() {
                             tasklist.map((task,index) => {
                                 if (task['Category'] === "URGENT!") {
                                     return(
-                                        <div className="detailcard urgent">
+                                        <div key={index} className="detailcard urgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> {/* check keys and make new component jsx page */}
@@ -157,7 +157,7 @@ function List() {
                                 }
                                 else if (task['Category'] === "Important") {
                                     return(
-                                        <div className="detailcard important">
+                                        <div key={index} className="detailcard important">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> 
@@ -181,7 +181,7 @@ function List() {
                                 }
                                 else {
                                     return(
-                                        <div className="detailcard noturgent">
+                                        <div key={index} className="detailcard noturgent">
                                             <div className="container">
                                                 <a href="/list">
                                                     <h1><b>{task.title}</b></h1> 
