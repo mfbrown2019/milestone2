@@ -3,6 +3,10 @@
   margin: 5px;
 }
 
+input {
+  width: 300px;
+}
+
 .top {
   text-align: center;
   background: -webkit-linear-gradient(-180deg, black, blue);
