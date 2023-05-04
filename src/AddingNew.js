@@ -103,25 +103,25 @@ class AddNew extends React.Component {
     });
   };
 
-  displayUserData = (posts) => {
+  // displayUserData = (posts) => {
 
-    if (!posts.length) return null;
-    console.log(posts);
+  //   if (!posts.length) return null;
+  //   console.log(posts);
 
 
-    return posts.map((post, index) => (
-      <div key={index} className="blog-post__display">
-        <h1><b>{post.title}</b></h1> 
-        <p>Category: {post.Category}</p> 
-        <p><b>Due Date: {post.Due}</b></p>
-        <p>Location: {post.Location}</p>
-        <p className="status">Staus: {post.status}</p>
-        <br/>
-        <p>Description: </p>
-        <p>{post.content}</p><br/><br/>
-      </div>
-    ));
-  };
+  //   return posts.map((post, index) => (
+  //     <div key={index} className="blog-post__display">
+  //       <h1><b>{post.title}</b></h1> 
+  //       <p>Category: {post.Category}</p> 
+  //       <p><b>Due Date: {post.Due}</b></p>
+  //       <p>Location: {post.Location}</p>
+  //       <p className="status">Staus: {post.status}</p>
+  //       <br/>
+  //       <p>Description: </p>
+  //       <p>{post.content}</p><br/><br/>
+  //     </div>
+  //   ));
+  // };
 
   render() {
 
@@ -148,9 +148,9 @@ class AddNew extends React.Component {
           {/* <input type="submit" value="Add Task"/> */}
           <Button type="submit">Add Task</Button>
       </form>
-        <div className="blog-">
+        {/* <div className="blog-">
             {this.displayUserData(this.state.posts)}
-        </div>
+        </div> */}
       </div>
     );
   }

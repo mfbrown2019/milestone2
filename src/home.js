@@ -95,22 +95,30 @@ function Home() {
                     <div>
                         <h2>MAIN</h2>
                         <p>MAIN OVERVIEW PAGE</p>
+                        <a href="/">
                         <img className="homeimg" src={home} alt="homepage"/>
+                        </a>
                     </div>
                     <div>
                         <h2>TODO LIST</h2>
                         <p>MAIN TODO LIST</p>
-                        <img className="homeimg" src={todo} alt="todolist"/>
+                        <a href="/list">
+                            <img className="homeimg" src={todo} alt="todolist"/>
+                        </a>
                     </div>
                     <div>
                         <h2>SIGN UP</h2>
                         <p>MAKE AN ACCOUNT</p>
-                        <img className="homeimg" src={signup} alt="signup"/>
+                        <a href="/newUser">
+                            <img className="homeimg" src={signup} alt="signup"/>
+                        </a>
                     </div>
                     <div>
                         <h2>LOGIN</h2>
                         <p>LOGIN TO THE ACCOUNT</p>
-                        <img className="homeimg" src={login} alt="loginimg"/>
+                        <a href="/newUser">
+                            <img className="homeimg" src={login} alt="loginimg"/>
+                        </a>
                     </div>
                 </div>
             </section>
