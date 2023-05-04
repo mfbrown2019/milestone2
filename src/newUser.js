@@ -1,24 +1,9 @@
-import signup from './signup.jpg'
-import home from './homepage.jpg'
-import important from './Important.png'
-import login from './login.jpg'
-import not_urgent from './Not-Urgent.png'
+
 import panther_paw from './Panther-Paw.png'
-import urgent from './Urgent.png'
 import './detail.css';
 import LogIn from './LoggingIn'
-import app from './FirebaseConfiguration'
 import SignIn from './FirebaseInit'
-import { signInWithEmailAndPassword } from 'firebase/auth'
 import SignUp from './SigningUp'
-import * as ReactDOM from 'react-dom';
-import App from './App';
-import Check from './Check'
-import { Routes, Route } from "react-router-dom";
-import { Button } from 'react-bootstrap';
-import handleLogIn from './LoggingIn';
-import LoggingIn from './LoggingIn'
-import handleSignUp from './SigningUp';
 import { useContext } from 'react'
 import AuthContext from './Hooks/useAuth'
 

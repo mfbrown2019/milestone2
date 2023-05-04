@@ -1,21 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import withRouter from "./WithRouter";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button, Placeholder } from 'react-bootstrap';
-import { useContext } from 'react';
-import AuthContext from './Hooks/useAuth';
+import { Button } from 'react-bootstrap';
+// import { useContext } from 'react';
+// import AuthContext from './Hooks/useAuth';
 
-function GetUser() {
-  const { user } = useContext(AuthContext);
-  if (user) {
-    var Placeholder = user.email;
-    console.log(Placeholder, "Placeholder");
- }
-  return (Placeholder);
-  //return Placeholder;
-  //return user.email;
-}
+// function GetUser() {
+//   const { user } = useContext(AuthContext);
+//   if (user) {
+//     var Placeholder = user.email;
+//     console.log(Placeholder, "Placeholder");
+//  }
+//   return (Placeholder);
+//   //return Placeholder;
+//   //return user.email;
+// }
 
 
 class AddNew extends React.Component {

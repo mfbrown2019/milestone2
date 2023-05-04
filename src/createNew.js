@@ -1,14 +1,8 @@
 
-import signup from './signup.jpg'
-import home from './homepage.jpg'
-import important from './Important.png'
-import login from './login.jpg'
-import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
-import urgent from './Urgent.png'
 import './detail.css';
 import { signOut } from 'firebase/auth'
-import {auth,provider} from "./FirebaseConfiguration";
+import {auth} from "./FirebaseConfiguration";
 import { useContext } from 'react';
 import AuthContext from './Hooks/useAuth';
 import AddNew from './AddingNew';
@@ -51,7 +45,7 @@ function CreateNew() {
                     {user? (
                         <div>
                             {/* <li><button onClick={handleLogout}>LOGOUT</button></li> */}
-                            <li> <a onClick={handleLogout}>LOGOUT</a></li>
+                            <li> <a href='/' onClick={handleLogout}>LOGOUT</a></li>
                         </div>
                     ) : (
                         <>

@@ -1,9 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {auth,provider} from "./FirebaseConfiguration"
-import {signInWithPopup} from "firebase/auth"; 
-import NewUser from "./newUser"
-import { Button } from 'react-bootstrap';
-import App from "./App";
+import React, { useState} from "react";
+import {auth} from "./FirebaseConfiguration"
 
 // const Check =()=> {
 //     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,7 +32,7 @@ import App from "./App";
 
 import { useContext } from "react";
 import AuthContext from "./Hooks/useAuth";
-import { useNavigate, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const Profile = () => {
@@ -44,7 +40,7 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
   console.log("Profile:", user)
   const [setUser] = useState('');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleLogout = async () => {
       signOut(auth).then(() => {
         setUser({})

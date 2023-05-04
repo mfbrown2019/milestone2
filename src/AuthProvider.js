@@ -30,12 +30,12 @@
 
 // export default AuthProvider;
 
-import app from './FirebaseConfiguration';
+// import app from './FirebaseConfiguration';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useState, useEffect } from 'react';
 import AuthContext from "./Hooks/useAuth";
-import useFirebase from './Hooks/useFirebase';
-import Profile from './Check';
+// import useFirebase from './Hooks/useFirebase';
+// import Profile from './Check';
 
 
 const auth = getAuth()
@@ -43,7 +43,7 @@ const user = auth.currentUser
 console.log(`context  user: ${user}`)
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const allContext = useFirebase();
+    // const allContext = useFirebase();
     useEffect(() => {
         onAuthStateChanged(auth,(user) => {
             setUser(user)

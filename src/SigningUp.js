@@ -1,18 +1,15 @@
-import { getAuth, updateProfile } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { getAuth } from "firebase/auth";
 
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import React, { useCallback } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import React from "react";
 import withRouter from "./WithRouter";
-import app from "./FirebaseConfiguration";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import NewUser from "./newUser";
 
 const SignUp = ({ history }) => {
-    const [user, setUser] = useState({})
-    const [error, setError] = useState('')
-    const [name, setName] = useState('')
+    // const [user, setUser] = useState({})
+    // const [error, setError] = useState('')
+  
     const auth = getAuth();
     const navigate = useNavigate();
     const handleSignUp = (async (e) => {
@@ -22,7 +19,7 @@ const SignUp = ({ history }) => {
         try {
             await createUserWithEmailAndPassword(auth, email.value, password.value).then((userCredential) => {
             console.log(auth, name.value, email.value, password.value)
-            const user = userCredential.user;
+            // const user = userCredential.user;
             console.log(userCredential)
             //alert("User Created")
             navigate('/')
@@ -32,13 +29,13 @@ const SignUp = ({ history }) => {
         }
     });
 
-    const setUserName = () => {
-        updateProfile(auth.currentUser, { displayName: name })
-            .then(result => {
+    // const setUserName = () => {
+    //     updateProfile(auth.currentUser, { displayName: name })
+    //         .then(result => {
 
-            })
+    //         })
 
-    };
+    // };
 
 return (
     // <div>
