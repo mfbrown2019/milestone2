@@ -3,6 +3,7 @@ import home from './homepage.jpg'
 import important from './Important.png'
 import React, { Component } from 'react';
 import login from './login.jpg'
+import { useEffect } from 'react';
 import not_urgent from './Not-Urgent.png'
 import panther_paw from './Panther-Paw.png'
 import urgent from './Urgent.png'
@@ -19,6 +20,7 @@ function List() {
     const { user } = useContext(AuthContext);
 
     const [tasklist, setTasks] = useState([])
+    const [tasklist_real, setTasks_real] = useState([])
     console.log("List:", user)
     //   var Placeholder = 'Login';
     if (user) {
@@ -31,6 +33,10 @@ function List() {
         //setUser({})
         })
     }
+
+    useEffect(() => {
+        getUserData();
+      }, []);
     
 
     let getUserData = () => {
@@ -40,6 +46,7 @@ function List() {
             let temp = []
             temp = data
 
+            setTasks_real(temp)
             setTasks(temp)
             console.log('Data has been received!!');
             })
@@ -48,13 +55,12 @@ function List() {
             });
     }
 
-    getUserData();
+    
 
 
 
     const filterdata = (e) => {
-        getUserData();
-        const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        const filteredTasks = tasklist_real.filter(task => task.title.toLowerCase().includes(e.target.value.toLowerCase()));
         setTasks(filteredTasks.length > 0 ? filteredTasks : tasks);
     }
 
